@@ -1,0 +1,64 @@
+# Site
+name: "Jair Zheng"
+title: "A Salesforce Developer Blog"
+description: "A Salesforce developer in China."
+logo: ''
+favicon: 'assets/images/favicon.ico'
+baseurl: ''
+google_analytics: 'UA-38694478-1'
+disqus: 'jairzheng'
+mailchimp-list:
+include: ["_pages"]
+permalink: /blog/:year/:month/:day/:title
+
+# Authors
+authors:
+  jair:
+    name: Jair Zheng
+    display_name: Jair
+    gravatar: d0dc091fd18b2d2961459aeb394d09c1
+    email: jairzh@live.com
+    web: https://www.jairzh.com
+    twitter: https://twitter.com/jairzheng
+    description: "A Salesforce 5X certifications, product manager and technical architect in Charket.com"
+
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
+
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+  layout: archive
+  permalinks:
+    category: '/category/:name/'
+
+# Pagination
+paginate: 6
+paginate_path: /page:num/
+
+# Other
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+# Adsense (change to "enabled" to activate, also your client id and ad slot. Create a new ad unit from your Adsense account to get the slot.)
+adsense: "disabled"
+adsense-data-ad-client: "ca-pub-3412143450191416"
+adsense-data-ad-slot: "1363087678"
+
+# Lazy Images ("enabled" or "disabled")
+lazyimages: "disabled"
+
+exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]
