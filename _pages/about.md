@@ -8,7 +8,7 @@ comments: true
 <div class="row justify-content-between">
 <div class="col-md-8 pr-5">
 
-<p>I started Salesforce developer from 2010, work with my team to build a Salesforce App - Charket from 2014.</p>
+<p>Since 2010, I have been working as a Salesforce developer and collaborating with my team to develop multiple Salesforce applications in Charket since 2014.</p>
 
 <h4>Charket App</h4>
 
