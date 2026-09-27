@@ -10,6 +10,7 @@ google_analytics: 'G-GQH825L9LL'
 mailchimp-list:
 include: ["_pages"]
 permalink: /blog/:year/:month/:day/:title
+timezone: Asia/Shanghai
 
 # Authors
 authors:
