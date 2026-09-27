@@ -1,12 +1,12 @@
 # Site
 name: "Jair Zheng"
-title: "A Salesforce Developer Blog"
-description: "A Salesforce developer in China."
+title: "Jair Talks Salesforce"
+description: "Notes on Salesforce, AI and architecture."
 logo: ''
 favicon: 'assets/images/favicon.ico'
+url: 'https://jairzh.com'
 baseurl: ''
 google_analytics: 'G-GQH825L9LL'
-disqus: 'jairzheng'
 mailchimp-list:
 include: ["_pages"]
 permalink: /blog/:year/:month/:day/:title
@@ -18,9 +18,10 @@ authors:
     display_name: Jair
     gravatar: d0dc091fd18b2d2961459aeb394d09c1
     email: jairzh@live.com
-    web: https://www.jairzh.com
+    web: https://jairzh.com
     twitter: https://twitter.com/jairzheng
-    description: "A Salesforce 15X certifications, product manager and technical architect in Charket.com"
+    linkedin: https://www.linkedin.com/in/jairzh/
+    description: 'In the Salesforce ecosystem since 2010, 20+ Salesforce certifications (incl. System and Application Architect). Building <a href="https://www.charket.ai/?utm_source=blog&utm_medium=author_bio&utm_campaign=jairzh_com" target="_blank">Charket</a>.'
 
 
 # Plugins

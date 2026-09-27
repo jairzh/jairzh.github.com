@@ -3,7 +3,7 @@ layout: post
 title: "Salesforce Summer '16 Release 亮点功能介绍，Lightning 未来的方向"
 date: 2016-06-21 09:25:29 +0800
 author: jair
-image: "assets/images/2016/06/14657982205119.jpg"
+image: "/assets/images/2016/06/14657982205119.jpg"
 comments: true
 tags: salesforce summer16
 categories: release

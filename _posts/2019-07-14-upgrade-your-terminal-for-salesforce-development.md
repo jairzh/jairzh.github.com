@@ -3,7 +3,7 @@ layout: post
 title: "升级你的 Terminal，让 Salesforce 开发更高效"
 date: 2019-07-14 08:25:29 +0800
 author: jair
-image: assets/images/2019/07/15630875251257.jpg
+image: /assets/images/2019/07/15630875251257.jpg
 comments: true
 tags: terminal
 categories: tool

@@ -9,6 +9,12 @@
 <title>{{ page.title }} | {{site.name}}</title>
 
 {% seo %}
+{% unless page.image %}
+<meta property="og:image" content="{{ '/assets/images/og-default.png' | absolute_url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="{{ '/assets/images/og-default.png' | absolute_url }}">
+{% endunless %}
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -184,7 +190,7 @@
 
 <script src="{{ site.baseurl }}/assets/js/ie10-viewport-bug-workaround.js"></script>
 
-{% if page.layout == 'post' %}
+{% if page.layout == 'post' and site.disqus %}
 <script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>
 {% endif %}
 
