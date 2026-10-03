@@ -7,6 +7,7 @@ image: /assets/images/wechat/agentic-era-salesforce-development/cover.jpg
 description: "一张图看懂 Agentic AI 如何重塑 Salesforce Admin 与 Developer 的工作方式。"
 categories: ai
 tags: "agentic-ai tdx"
+translation_key: agentic-era-salesforce-development
 ---
 一张图看懂 Agentic AI 如何重塑 Salesforce Admin 与 Developer 的工作方式。
 

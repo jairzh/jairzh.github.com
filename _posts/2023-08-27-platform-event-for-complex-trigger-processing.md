@@ -7,6 +7,7 @@ image: /assets/images/wechat/platform-event-for-complex-trigger-processing/cover
 description: "如何使用单独的 Transaction （异步）来处理复杂的业务处理，包括耗时的计算和 Callout 操作，同时又能尽早的生成结果。避免使用 Scheduled 这种定时处理方式。"
 categories: apex
 tags: "platform-event trigger"
+translation_key: platform-event-for-complex-trigger-processing
 ---
 如何使用单独的 Transaction （异步）来处理复杂的业务处理，包括耗时的计算和 Callout 操作，同时又能尽早的生成结果。避免使用 Scheduled 这种定时处理方式。
 

@@ -6,6 +6,7 @@ author: jair
 comments: true
 tags: salesforce test
 categories: apex
+translation_key: how-to-write-good-apex-test-methods
 ---
 
 在 Salesforce 中开发，Test Method 肯定是少不了的，因为在部署的时候 Production 是要求测试代码的整体覆盖率是不能小于 **75%** 的，而且 Trigger 是不能没有对应的测试代码的。测试代码的作用是什么，既然必须要写测试代码, 怎么才能让测试代码发挥它应该拥有的价值？这里给大家提供一些写测试代码的基本原则和注意的知识点。

@@ -7,6 +7,7 @@ image: /assets/images/wechat/salesforce-archive/cover.jpg
 description: "Salesforce Archive 官方推出的数据归档服务"
 categories: data
 tags: "archive storage"
+translation_key: salesforce-archive
 ---
 随着 Org 使用时间的增长，面临的一个挑战就是：**数据爆炸**。
 

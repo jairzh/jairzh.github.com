@@ -7,6 +7,7 @@ image: /assets/images/wechat/ai-assisted-salesforce-learning-plan-2026/cover.jpg
 description: "每年年初制定学习计划是惯例。作为 Salesforce 从业者，通常我会根据 Trailhead 官网路径结合经验人工筛选证书目标。"
 categories: ai
 tags: "certification learning-plan"
+translation_key: ai-assisted-salesforce-learning-plan-2026
 ---
 每年年初制定学习计划是惯例。作为 Salesforce 从业者，通常我会根据 Trailhead 官网路径结合经验人工筛选证书目标。今年我决定换个思路：引入 AI（ChatGPT 和 Gemini）作为“咨询顾问”，对我的计划进行交叉验证。
 

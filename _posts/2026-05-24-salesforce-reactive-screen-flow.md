@@ -7,6 +7,7 @@ image: /assets/images/wechat/salesforce-reactive-screen-flow/cover.jpg
 description: "Salesforce Screen Flow 通过 Reactivity 支持实时 UI 渲染：组件之间可以相互传值，借助 Formula 中转实现复杂计算和相互控制。"
 categories: flow
 tags: "screen-flow"
+translation_key: salesforce-reactive-screen-flow
 ---
 Salesforce Screen Flow 通过 Reactivity 支持实时 UI 的渲染，可以通过组件之间相互传值，利用 Formula 作为中转实现复杂的计算，实现相互的控制，比如禁用组件，动态改变组件的值等。
 
