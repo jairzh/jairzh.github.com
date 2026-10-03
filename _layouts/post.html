@@ -4,6 +4,7 @@ disqus: false
 archive: false
 post_class: post-template
 ---
+{% include language-context.html %}
 
 <!-- Begin Article
 ================================================== -->
@@ -32,7 +33,7 @@ post_class: post-template
                         {% endif %}
                     </div>
                     <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
-                        <a target="_blank" class="link-dark" href="{{ author.web }}">{{ author.display_name }}</a><a target="_blank" href="{{ author.linkedin | default: author.twitter }}" class="btn follow">Follow</a>
+                        <a target="_blank" class="link-dark" href="{{ author.web }}">{{ author.display_name }}</a><a target="_blank" href="{{ author.linkedin | default: author.twitter }}" class="btn follow">{{ language.follow_label }}</a>
                         <span class="author-description">{{ author.description }}</span>
                     </div>
                 </div>
@@ -100,7 +101,7 @@ post_class: post-template
                     {% assign sortedCategories = page.categories | sort %}
                     {% for category in sortedCategories %}
                     <li>
-                        <a class="smoothscroll" href="{{site.baseurl}}/categories#{{ category | replace: " ","-" }}">{{ category }}</a>
+                        <a class="smoothscroll" href="{{ language.categories | relative_url }}#{{ category | replace: " ","-" }}">{{ category }}</a>
                     </li>
                     {% endfor %}
                 </ul>
@@ -113,7 +114,7 @@ post_class: post-template
                     {% assign sortedTags = page.tags | sort %}
                     {% for tag in sortedTags %}
                     <li>
-                        <a class="smoothscroll" href="{{site.baseurl}}/tags#{{ tag | replace: " ","-" }}">#{{ tag }}</a>
+                        <a class="smoothscroll" href="{{ language.tags | relative_url }}#{{ tag | replace: " ","-" }}">#{{ tag }}</a>
                     </li>
                     {% endfor %}
                 </ul>
@@ -121,12 +122,32 @@ post_class: post-template
             <!-- End Tags -->
 
             <!-- Prev/Next -->
-            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
-            {% if page.previous.url %}
-            <a class="prev d-block col-md-6" href="{{ site.baseurl }}/{{page.previous.url}}"> &laquo; {{page.previous.title}}</a>
+            {% if current_lang == 'en' %}
+                {% assign navigation_posts = site.english_posts | sort: 'date' %}
+            {% else %}
+                {% assign navigation_posts = site.posts | sort: 'date' %}
             {% endif %}
-            {% if page.next.url %}
-            <a class="next d-block col-md-6 text-lg-right" href="{{ site.baseurl }}/{{page.next.url}}">{{page.next.title}} &raquo; </a>
+            {% assign previous_post = nil %}
+            {% assign next_post = nil %}
+            {% assign preceding_post = nil %}
+            {% assign found_current = false %}
+            {% for navigation_post in navigation_posts %}
+                {% if found_current %}
+                    {% assign next_post = navigation_post %}
+                    {% break %}
+                {% endif %}
+                {% if navigation_post.url == page.url %}
+                    {% assign previous_post = preceding_post %}
+                    {% assign found_current = true %}
+                {% endif %}
+                {% assign preceding_post = navigation_post %}
+            {% endfor %}
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            {% if previous_post %}
+            <a class="prev d-block col-md-6" href="{{ previous_post.url | relative_url }}"> &laquo; {{ previous_post.title }}</a>
+            {% endif %}
+            {% if next_post %}
+            <a class="next d-block col-md-6 text-lg-right" href="{{ next_post.url | relative_url }}">{{ next_post.title }} &raquo; </a>
             {% endif %}
             <div class="clearfix"></div>
             </div>

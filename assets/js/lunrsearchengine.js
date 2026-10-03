@@ -4,22 +4,26 @@ sitemap: false
 ---
 
 {% assign counter = 0 %}
-var documents = [{% for page in site.pages %}{% if page.url contains '.xml' or page.url contains 'assets' or page.url contains 'category' or page.url contains 'tag' %}{% else %}{
-    "id": {{ counter }},
-    "url": "{{ site.url }}{{site.baseurl}}{{ page.url }}",
-    "title": "{{ page.title }}",
-    "body": "{{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"{% assign counter = counter | plus: 1 %}
-    }, {% endif %}{% endfor %}{% for page in site.without-plugin %}{
-    "id": {{ counter }},
-    "url": "{{ site.url }}{{site.baseurl}}{{ page.url }}",
-    "title": "{{ page.title }}",
-    "body": "{{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"{% assign counter = counter | plus: 1 %}
-    }, {% endfor %}{% for page in site.posts %}{
-    "id": {{ counter }},
-    "url": "{{ site.url }}{{site.baseurl}}{{ page.url }}",
-    "title": "{{ page.title }}",
-    "body": "{{ page.date | date: "%Y/%m/%d" }} - {{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"{% assign counter = counter | plus: 1 %}
-    }{% if forloop.last %}{% else %}, {% endif %}{% endfor %}];
+{% assign search_documents = site.pages | concat: site.posts | concat: site.english_posts %}
+var documents = [
+{% for document in search_documents %}
+{% unless document.url contains '.xml' or document.url contains 'assets' or document.url contains 'categor' or document.url contains 'tags' or document.sitemap == false %}
+{% if counter > 0 %},{% endif %}
+{
+    "url": {{ document.url | absolute_url | jsonify }},
+    "title": {{ document.title | default: site.title | jsonify }},
+    "lang": {{ document.lang | default: site.lang | jsonify }},
+    "body": {{ document.content | markdownify | strip_html | normalize_whitespace | jsonify }}
+}
+{% assign counter = counter | plus: 1 %}
+{% endunless %}
+{% endfor %}
+].filter(function (doc) {
+    return doc.lang === document.documentElement.lang;
+}).map(function (doc, id) {
+    doc.id = id;
+    return doc;
+});
 
 var idx = lunr(function () {
     this.ref('id')

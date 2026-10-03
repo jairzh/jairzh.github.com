@@ -7,6 +7,7 @@ image: "https://article.asset.jairzh.com/img/2026/10/26-mini-hack-x3e6ff.png"
 description: "从 Dreamforce 2026 Mini Hacks 看 Salesforce MCP：AIforce 界面层、Tools 设计、认证与权限、Flex Credits 成本，以及模型和 React 的开放。"
 categories: ai
 tags: "dreamforce mcp agentforce aiforce"
+translation_key: dreamforce-2026-salesforce-mcp
 ---
 今年去了 Dreamforce 2026 现场。每年 Dreamforce 都有一些动手的小实验，叫 **Mini Hacks**，用来让大家体验当年主推的技术。今年一共五个题目，**三个都和 MCP 有关**，剩下两个一个讲模型选择，一个讲 React。
 
