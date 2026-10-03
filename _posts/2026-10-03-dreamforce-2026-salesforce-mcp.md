@@ -8,8 +8,6 @@ description: "从 Dreamforce 2026 Mini Hacks 看 Salesforce MCP：AIforce 界面
 categories: ai
 tags: "dreamforce mcp agentforce aiforce"
 ---
-![26-mini-hack-x3e6ff](https://article.asset.jairzh.com/img/2026/10/26-mini-hack-x3e6ff.png)
-
 今年去了 Dreamforce 2026 现场。每年 Dreamforce 都有一些动手的小实验，叫 **Mini Hacks**，用来让大家体验当年主推的技术。今年一共五个题目，**三个都和 MCP 有关**，剩下两个一个讲模型选择，一个讲 React。
 
 题目的分布本身就说明了方向：**Salesforce 不再只在自己的界面里做 AI，而是要把 CRM 的能力送到用户正在用的 AI 工具里。**
