@@ -5,6 +5,7 @@ date: 2019-03-09 08:25:29 +0800
 author: jair
 comments: true
 categories: lwc
+translation_key: debug-lightning-web-components
 ---
 
 ## Enable Debug Model

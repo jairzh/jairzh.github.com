@@ -6,6 +6,7 @@ author: jair
 comments: true
 tags: salesforce email
 categories: admin
+translation_key: adding-image-in-email-template
 ---
 
 Salesforce 做为一个 CRM 系统，给客户发邮件肯定是必不可少的功能，Salesforce 提供了非常灵活的 Email Template 功能，来满足你的业务需求。如果你们公司的要求相对高一些的话，肯定希望给客户发一封图文并茂的 Email，这里给大家介绍如何在 Email Tempalte 中引用图片。

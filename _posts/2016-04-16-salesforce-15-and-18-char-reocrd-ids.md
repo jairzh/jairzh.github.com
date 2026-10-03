@@ -6,6 +6,7 @@ author: jair
 comments: true
 tags: salesforce
 categories: apex
+translation_key: salesforce-record-ids
 ---
 
 在 Salesforce 中 Record (记录) ID 是非常重要的，它代表了一条唯一的数据，在做数据操作的时候是离不开 ID 的，这次给大家详细介绍一下 Record ID。

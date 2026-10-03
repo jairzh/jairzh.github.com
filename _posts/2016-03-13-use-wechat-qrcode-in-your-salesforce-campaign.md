@@ -6,6 +6,7 @@ author: jair
 comments: true
 tags: salesforce campaign
 categories: wechat
+translation_key: use-wechat-qrcode-in-your-salesforce-campaign
 ---
 
 市场活动在 CRM 中是很重要的一项，很多公司都会通过主办各类研讨会、客户交流会、演示会、新产品发布会、体验会等，来吸引自己的潜在客户（Lead）和提高现有客户（Contact）的满意度。当一个公司拥有一定量的客户群体时，就需要一个系统来帮助他们管理和分析每次市场活动。这次给大家介绍如何在 Salesforce CRM 中管理市场活动，同时利用微信二维码来改进客户参与市场活动的过程。
