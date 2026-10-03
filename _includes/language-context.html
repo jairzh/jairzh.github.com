@@ -1,0 +1,24 @@
+{%- assign current_lang = page.lang | default: site.lang -%}
+{%- assign language = site.data.languages[current_lang] -%}
+{%- assign chinese_url = site.data.languages['zh-CN'].home -%}
+{%- assign english_url = site.data.languages.en.home -%}
+{%- assign language_variants = nil -%}
+{%- if page.translation_key -%}
+  {%- if page.translation_key == 'home' -%}
+    {%- if page.url == '/' or page.url == '/en/' -%}
+      {%- assign chinese_home = site.pages | where: 'url', '/' -%}
+      {%- assign english_home = site.pages | where: 'url', '/en/' -%}
+      {%- assign language_variants = chinese_home | concat: english_home -%}
+    {%- endif -%}
+  {%- else -%}
+    {%- assign language_documents = site.documents | concat: site.pages -%}
+    {%- assign language_variants = language_documents | where: 'translation_key', page.translation_key -%}
+  {%- endif -%}
+  {%- for variant in language_variants -%}
+    {%- if variant.lang == 'en' -%}
+      {%- assign english_url = variant.url -%}
+    {%- elsif variant.lang == 'zh-CN' -%}
+      {%- assign chinese_url = variant.url -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}

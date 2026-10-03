@@ -1,5 +1,6 @@
+{% include language-context.html %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ current_lang }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,6 +10,10 @@
 <title>{{ page.title }} | {{site.name}}</title>
 
 {% seo %}
+{% for variant in language_variants %}
+<link rel="alternate" hreflang="{{ variant.lang }}" href="{{ variant.url | absolute_url }}">
+{% endfor %}
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }} — {{ current_lang }}" href="{{ language.feed | absolute_url }}">
 {% unless page.image %}
 <meta property="og:image" content="{{ '/assets/images/og-default.png' | absolute_url }}">
 <meta property="og:image:width" content="1200">
@@ -53,7 +58,7 @@
     <div class="container pr-0">
 
     <!-- Begin Logo -->
-    <a class="navbar-brand" href="{{ site.baseurl }}/">
+    <a class="navbar-brand" href="{{ language.home | relative_url }}">
     <!--img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}"-->
     Jair Talks Salesforce
     </a>
@@ -69,16 +74,23 @@
 
             <ul class="navbar-nav ml-auto">
 
-                {% if page.url == "/" %}
+                {% if page.url == language.home %}
                 <li class="nav-item active">
                 {% else %}
                 <li class="nav-item">
                 {% endif %}
-                <a class="nav-link" href="{{ site.baseurl }}/index.html">Blog</a>
+                <a class="nav-link" href="{{ language.home | relative_url }}">{{ language.blog_label }}</a>
                 </li>
 
                 <li class="nav-item">
-                <a class="nav-link" href="{{ site.baseurl }}/about">About</a>
+                <a class="nav-link" href="{{ language.about | relative_url }}">{{ language.about_label }}</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link{% if current_lang == 'zh-CN' %} active{% endif %}" href="{{ chinese_url | relative_url }}" lang="zh-CN"{% if current_lang == 'zh-CN' %} aria-current="true"{% endif %}>中文</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link{% if current_lang == 'en' %} active{% endif %}" href="{{ english_url | relative_url }}" lang="en"{% if current_lang == 'en' %} aria-current="true"{% endif %}>English</a>
                 </li>
 
                 {% include search-lunr.html %}
@@ -137,10 +149,20 @@
 	<div class="d-md-flex h-100">
 		<div class="col-md-4 transpdark align-self-center text-center h-100">
             <div class="d-md-flex align-items-center justify-content-center h-100">
-                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">{{ language.explore_label }} <span class="d-none d-md-inline">→</span></h2>
             </div>
 		</div>
 		<div class="col-md-8 p-5 align-self-center text-center">
+            {% if current_lang == 'en' %}
+                {% assign english_categories = site.english_posts | map: 'categories' | join: ',' | split: ',' | uniq | sort %}
+                {% for category in english_categories %}
+                    {% assign category_count = 0 %}
+                    {% for article in site.english_posts %}
+                        {% if article.categories contains category %}{% assign category_count = category_count | plus: 1 %}{% endif %}
+                    {% endfor %}
+                    <a class="mt-1 mb-1" href="{{ language.categories | relative_url }}#{{ category | url_escape | strip | replace: ' ', '-' }}">{{ category | camelcase }} ({{ category_count }})</a>
+                {% endfor %}
+            {% else %}
             {% assign categories_list = site.categories %}
             {% if categories_list.first[0] == null %}
                 {% for category in categories_list %}
@@ -152,6 +174,7 @@
                 {% endfor %}
             {% endif %}
             {% assign categories_list = nil %}
+            {% endif %}
 		</div>
 	</div>
 </div>

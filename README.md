@@ -2,6 +2,30 @@
 
 My Blog: [jairzh.com](https://www.jairzh.com)
 
+## Languages
+
+Chinese posts remain in `_posts` with their existing `/blog/...` URLs and pagination.
+The English home page is `/en/`; English articles live in `_english_posts` and
+do not appear in the Chinese post list, search results, or archives.
+
+To add an English translation:
+
+1. Add the same `translation_key` to both versions of the article.
+2. Create `_english_posts/<slug>.md` with `title`, `date`, `description`,
+   `categories` and `tags` (as YAML arrays), and an explicit
+   `permalink: /en/blog/YYYY/MM/DD/<slug>` matching the original publication date.
+3. Reuse the original `image` when appropriate; the post layout renders it as
+   the cover, so do not repeat it at the start of the body.
+
+English articles inherit `layout: post`, `author: jair`, and `lang: en`.
+Matching `translation_key` values connect the language switcher and reciprocal
+`hreflang` links. Pages without translations link to the other language's home
+page. Each language version keeps its own canonical URL. English categories,
+tags, search results, and RSS (`/en/feed.xml`) use only the English collection.
+
+Open a pull request for structural changes and translations. Merging into
+`master` triggers the existing GitHub Pages deployment.
+
 ## Create a new post
 
 1. `jekyll serve --watch`
@@ -67,4 +91,3 @@ beforetoc: "Markdown editor is a very powerful thing. In this article I'm going 
 toc: true
 ---
 ```
-

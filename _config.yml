@@ -11,6 +11,33 @@ mailchimp-list:
 include: ["_pages"]
 permalink: /blog/:year/:month/:day/:title
 timezone: Asia/Shanghai
+lang: zh-CN
+
+# English translations stay separate so Chinese pagination and archives keep their URLs.
+collections:
+  english_posts:
+    output: true
+    permalink: /en/blog/:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: zh-CN
+      locale: zh_CN
+  - scope:
+      path: "en"
+    values:
+      lang: en
+      locale: en_US
+  - scope:
+      path: ""
+      type: english_posts
+    values:
+      layout: post
+      author: jair
+      lang: en
+      locale: en_US
 
 # Authors
 authors:

@@ -1,0 +1,20 @@
+---
+layout: default
+title: Blog in English
+description: "Notes on Salesforce, AI and architecture by Jair Zheng."
+permalink: /en/
+translation_key: home
+---
+
+<section class="recent-posts">
+    <div class="section-title">
+        <h2><span>ALL POSTS</span></h2>
+    </div>
+    <div class="row listrecent">
+        {% assign english_posts = site.english_posts | sort: 'date' | reverse %}
+        {% for post in english_posts %}
+            {% include postbox.html %}
+        {% endfor %}
+    </div>
+    <p><a href="{{ '/en/feed.xml' | relative_url }}">Subscribe via RSS</a></p>
+</section>

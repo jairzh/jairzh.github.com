@@ -1,0 +1,24 @@
+zh-CN:
+  home: /
+  about: /about
+  categories: /categories
+  tags: /tags
+  feed: /feed.xml
+  blog_label: 博客
+  about_label: 关于我
+  explore_label: 探索文章
+  search_placeholder: 输入关键词并回车…
+  share_label: 分享
+  follow_label: 关注
+en:
+  home: /en/
+  about: /en/about/
+  categories: /en/categories/
+  tags: /en/tags/
+  feed: /en/feed.xml
+  blog_label: Blog
+  about_label: About
+  explore_label: Explore
+  search_placeholder: Type and enter...
+  share_label: Share
+  follow_label: Follow

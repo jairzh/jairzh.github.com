@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+{% assign terms = site.english_posts | map: page.taxonomy | join: ',' | split: ',' | uniq | sort %}
+{% assign english_posts = site.english_posts | sort: 'date' | reverse %}
+<div class="row listrecent">
+    {% for term in terms %}
+    <div class="section-title col-md-12 mt-4">
+        <h2 id="{{ term | replace: ' ', '-' | escape }}">{{ page.title }}: <span class="text-capitalize">{{ term }}</span></h2>
+    </div>
+    {% for post in english_posts %}
+        {% if post[page.taxonomy] contains term %}
+            {% include postbox.html %}
+        {% endif %}
+    {% endfor %}
+    {% endfor %}
+</div>
