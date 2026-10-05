@@ -65,7 +65,7 @@ React gives Salesforce developers another valuable front-end option. My criteria
 
 **Define the use case first, then choose the framework.** Let LWC handle the integrated components it is well suited to, and use React where complete applications and ecosystem reuse offer an advantage.
 
-The event roadmap also described Angular support reaching GA in October 2026 and Vue support arriving around Lunar New Year 2027. Those were roadmap expectations; actual availability depends on the official release and your target environment. The current official overview already lists React and Angular templates.
+The event roadmap also described Angular support reaching GA in October 2026 and Vue support expected in spring 2027. Those were roadmap expectations; actual availability depends on the official release and your target environment. The current official overview already lists React and Angular templates.
 
 ### References
 
